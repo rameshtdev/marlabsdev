@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
     <div>
     <table>
-        <tr><td colspan="2">Self Assessment</td></tr>
+        <tr><td colspan="2">Self Assessment Page</td></tr>
         <tr><td>
             <asp:Label ID="lblFirstName" runat="server" Text="FirstName"></asp:Label>
             </td><td>
