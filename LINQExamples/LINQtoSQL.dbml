@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ModelFirstDemo" Class="LINQtoSQLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlExpress;Initial Catalog=ModelFirstDemo;Integrated Security=True" SettingsObjectName="LINQExamples.Properties.Settings" SettingsPropertyName="ModelFirstDemoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Courses" Member="Courses">
+    <Type Name="Course">
+      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Credits" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Course_Enrollment" Member="Enrollments" ThisKey="CourseId" OtherKey="CourseCourseId" Type="Enrollment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Enrollments" Member="Enrollments">
+    <Type Name="Enrollment">
+      <Column Name="EnrollmentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StudentStudentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CourseCourseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Course_Enrollment" Member="Course" ThisKey="CourseCourseId" OtherKey="CourseId" Type="Course" IsForeignKey="true" />
+      <Association Name="Student_Enrollment" Member="Student" ThisKey="StudentStudentId" OtherKey="StudentId" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Students" Member="Students">
+    <Type Name="Student">
+      <Column Name="StudentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Student_Enrollment" Member="Enrollments" ThisKey="StudentId" OtherKey="StudentStudentId" Type="Enrollment" />
+    </Type>
+  </Table>
+</Database>

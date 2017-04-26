@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQtoSQL">
+  <DataContextMoniker Name="/LINQtoSQLDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8b36ed7c-604a-4ca1-b236-86c5c3682764" absoluteBounds="0.75, 0.875, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/LINQtoSQLDataContext/Course" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c25cd154-36fb-458c-935a-e61d29a5b5a5" absoluteBounds="0.765, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c891f501-2834-411b-bbca-1908ba55d892" absoluteBounds="3.5, 0.875, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/LINQtoSQLDataContext/Enrollment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2ca73397-1e52-4c6d-9f68-0063c131b6a1" absoluteBounds="3.515, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bbc23bfd-ef0b-4518-8f51-3aa0636de4a3" absoluteBounds="0.75, 3.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/LINQtoSQLDataContext/Student" />
+      <nestedChildShapes>
+        <elementListCompartment Id="06aca32b-7fa7-4c73-bb3e-f3c218d2a300" absoluteBounds="0.765, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.56814697265625); (3.5 : 1.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LINQtoSQLDataContext/Course/Course_Enrollment" />
+      <nodes>
+        <classShapeMoniker Id="8b36ed7c-604a-4ca1-b236-86c5c3682764" />
+        <classShapeMoniker Id="c891f501-2834-411b-bbca-1908ba55d892" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.56814697265625); (4.5 : 4.56814697265625); (4.5 : 2.2612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LINQtoSQLDataContext/Student/Student_Enrollment" />
+      <nodes>
+        <classShapeMoniker Id="bbc23bfd-ef0b-4518-8f51-3aa0636de4a3" />
+        <classShapeMoniker Id="c891f501-2834-411b-bbca-1908ba55d892" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
