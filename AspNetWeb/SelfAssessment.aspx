@@ -5,13 +5,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Self Assessment</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    <table>
-        <tr><td colspan="2">Self Assessment Page</td></tr>
+    <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-3">
+    <table class="table table-hover">
+        <tr><th colspan="2" >Self Assessment Page</th></tr>
         <tr><td>
             <asp:Label ID="lblFirstName" runat="server" Text="FirstName"></asp:Label>
             </td><td>
@@ -20,8 +23,7 @@
             <td>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtFirstName" ErrorMessage="FirstName is Required">*</asp:RequiredFieldValidator>
             </td>
-        </tr>
-        <tr><td>
+        <td>
             <asp:Label ID="lblLastName" runat="server" Text="LastName"></asp:Label>
             </td><td>
                 <asp:TextBox ID="textLastName" runat="server"></asp:TextBox>
@@ -39,8 +41,7 @@
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtEmail" ErrorMessage="Email is Required">*</asp:RequiredFieldValidator>
                  <asp:RegularExpressionValidator runat="server" ControlToValidate="txtEmail" ErrorMessage="Email is not in Valid format" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
             </td>
-        </tr>
-        <tr><td>
+        <td>
             <asp:Label ID="lblAge" runat="server" Text="Age"></asp:Label>
             </td><td>
                 <asp:TextBox ID="txtAge" runat="server"></asp:TextBox>
@@ -52,8 +53,9 @@
         </tr>
         <tr><td>
             <asp:Label ID="lblGender" runat="server" Text="Gender"></asp:Label>
-            </td><td>
-                <asp:RadioButtonList ID="rdGender" runat="server">
+            </td>
+            <td>
+                <asp:RadioButtonList ID="rdGender" runat="server" RepeatDirection="Horizontal" >
                     <asp:ListItem>Male</asp:ListItem>
                     <asp:ListItem>Female</asp:ListItem>
                 </asp:RadioButtonList>
@@ -61,10 +63,10 @@
              <td>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="rdGender" ErrorMessage="Gender is Required">*</asp:RequiredFieldValidator>
             </td>
-        </tr>
-        <tr><td>
+       <td>
             <asp:Label ID="lblCountry" runat="server" Text="Country"></asp:Label>
-            </td><td>
+            </td>
+            <td>
                 <asp:DropDownList ID="ddlCountry" runat="server">
                     <asp:ListItem>Canada</asp:ListItem>
                     <asp:ListItem>USA</asp:ListItem>
@@ -106,6 +108,8 @@
         </asp:GridView>
              </td></tr>
     </table>
+    </div>
+    <div class="col-lg-6"></div>
     </div>
     </form>
 </body>
