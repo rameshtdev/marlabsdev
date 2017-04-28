@@ -18,7 +18,7 @@
         <tr><td>
             <asp:Label ID="lblFirstName" runat="server" Text="FirstName"></asp:Label>
             </td><td>
-                <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtFirstName" runat="server" placeholder="Enter first name"></asp:TextBox>
             </td>
             <td>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtFirstName" ErrorMessage="FirstName is Required">*</asp:RequiredFieldValidator>
@@ -26,7 +26,7 @@
         <td>
             <asp:Label ID="lblLastName" runat="server" Text="LastName"></asp:Label>
             </td><td>
-                <asp:TextBox ID="textLastName" runat="server"></asp:TextBox>
+                <asp:TextBox ID="textLastName" runat="server" placeholder="Enter last name"></asp:TextBox>
             </td>
              <td>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="textLastName" ErrorMessage="LastName is Required">*</asp:RequiredFieldValidator>
@@ -35,7 +35,7 @@
         <tr><td>
             <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
             </td><td>
-                <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtEmail" runat="server" placeholder="Enter email id"></asp:TextBox>
             </td>
              <td>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtEmail" ErrorMessage="Email is Required">*</asp:RequiredFieldValidator>
@@ -44,7 +44,7 @@
         <td>
             <asp:Label ID="lblAge" runat="server" Text="Age"></asp:Label>
             </td><td>
-                <asp:TextBox ID="txtAge" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtAge" runat="server" placeholder="Enter age"></asp:TextBox>
             </td>
              <td>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtAge" ErrorMessage="Age is Required">*</asp:RequiredFieldValidator>
