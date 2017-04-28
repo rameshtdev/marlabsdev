@@ -23,13 +23,15 @@
         <tr><td>
             <h5><asp:Label ID="lblFirstName" runat="server" Font-Bold="true" Text="FirstName"></asp:Label></h5>
             </td><td>
-                <asp:TextBox ID="txtFirstName" CssClass="form-control width"  runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtFirstName" runat="server"  CssClass="form-control width" placeholder="Enter first name"></asp:TextBox>
+                
             </td>
             
         <td>
             <h5><asp:Label ID="lblLastName" runat="server" Font-Bold="true" Text="LastName"></asp:Label></h5>
             </td><td>
-                <asp:TextBox ID="textLastName" CssClass="form-control width" runat="server"></asp:TextBox>
+                
+                <asp:TextBox ID="textLastName" CssClass="form-control width" placeholder="Enter last name" runat="server"></asp:TextBox>
             </td>
              <td>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="textLastName" ErrorMessage="LastName is Required">*</asp:RequiredFieldValidator>
@@ -38,13 +40,15 @@
         <tr><td>
            <h5> <asp:Label ID="lblEmail" runat="server" Font-Bold="true" Text="Email"></asp:Label></h5>
             </td><td>
-                <asp:TextBox ID="txtEmail" class="form-control width" runat="server"></asp:TextBox>
+                
+                <asp:TextBox ID="txtEmail" class="form-control width" placeholder="Enter email id" runat="server"></asp:TextBox>
             </td>
              
         <td>
            <h5> <asp:Label ID="lblAge" runat="server" Font-Bold="true" Text="Age"></asp:Label></h5>
             </td><td>
-                <asp:TextBox ID="txtAge" CssClass="form-control width" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtAge" runat="server" CssClass="form-control width" placeholder="Enter age"></asp:TextBox>
+                
             </td>
              <td>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtAge" ErrorMessage="Age is Required">*</asp:RequiredFieldValidator>
