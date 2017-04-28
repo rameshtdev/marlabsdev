@@ -23,10 +23,10 @@ namespace AspNetWeb
                 };
                 lstExpertise.Items.AddRange(expertise);
             }
-            //DataAccessLogic obj = new DataAccessLogic();
-            //var dataList = obj.GetAssessments();
-            //grdAssessments.DataSource = dataList;
-            //grdAssessments.DataBind();
+            DataAccessLogic obj = new DataAccessLogic();
+            var dataList = obj.GetAssessments();
+            grdAssessments.DataSource = dataList;
+            grdAssessments.DataBind();
         }
 
         protected void btnSumbit_Click(object sender, EventArgs e)
