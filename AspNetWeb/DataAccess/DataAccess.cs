@@ -6,6 +6,7 @@ using AspNetWeb.Models;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Web.Security;
 
 namespace AspNetWeb.DataAccess
 {
@@ -51,7 +52,7 @@ namespace AspNetWeb.DataAccess
                 {
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "GetAssessments";
+                    cmd.CommandText = "GETAssessments";
                     cmd.CommandTimeout = 300;
                     using (var datareader = cmd.ExecuteReader())
                     {
@@ -74,6 +75,36 @@ namespace AspNetWeb.DataAccess
                 conn.Close();
             }
             return returnList;
+        }
+
+        public bool Register(string email,string password)
+        {
+            using (SqlConnection con = new SqlConnection(dbConn))
+            {
+                SqlCommand cmd = new SqlCommand("register",con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@email", email));
+                string enc_password = FormsAuthentication.HashPasswordForStoringInConfigFile(password, "SHA1");
+                cmd.Parameters.Add(new SqlParameter("@password", enc_password));
+                con.Open();
+                var count = cmd.ExecuteNonQuery();
+                if (count == 1) { return true; } else { return false; }
+            }
+        }
+
+        public bool Login(string email,string password)
+        {
+            using (SqlConnection con = new SqlConnection(dbConn))
+            {
+                SqlCommand cmd = new SqlCommand("ValidateUser", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@email", email));
+                string enr_password = FormsAuthentication.HashPasswordForStoringInConfigFile(password, "SHA1");
+                cmd.Parameters.Add(new SqlParameter("@password", enr_password));
+                con.Open();
+                var count =(int)cmd.ExecuteScalar();
+                if(count == 1) { return true; }else { return false; }
+            }
         }
     }
 }
