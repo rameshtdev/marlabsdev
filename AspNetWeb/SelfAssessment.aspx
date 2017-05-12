@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SelfAssessment.aspx.cs" Inherits="AspNetWeb.SelfAssessment"%>
-<%@ OutputCache Duration="15" VaryByParam="None" %>
+<%@ OutputCache Duration="10" VaryByParam="None" %>
 
 <!DOCTYPE html>
 

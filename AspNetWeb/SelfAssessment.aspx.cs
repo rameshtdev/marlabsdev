@@ -13,6 +13,12 @@ namespace AspNetWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Response.Redirect("http://www.google.com?id=45&name=abc");
+           
+
+            Application["language"] = "english";
+            Cache["language"] = "english";
+            Session["something"] = "56";
             if (!Page.IsPostBack)
             {
                 ListItem[] expertise = {
@@ -24,15 +30,24 @@ namespace AspNetWeb
                 lstExpertise.Items.AddRange(expertise);
             }
             DataAccessLogic obj = new DataAccessLogic();
-            var dataList = obj.GetAssessments();
+            // var dataList = obj.GetAssessments();
+            //var dataList = obj.GetAssessmentsTable();
+            var dataList = (obj.GetAssessmentsDataSet()).Tables[0];
             grdAssessments.DataSource = dataList;
             grdAssessments.DataBind();
+
+            var lang = Convert.ToString(Application["language"]);
+            var langCache = Convert.ToString(Cache["language"]);
+            var session = Convert.ToString(Session["something"]);
         }
 
         protected void btnSumbit_Click(object sender, EventArgs e)
         {
+            Server.Transfer("/About.aspx", true);
+
             if (Page.IsValid)
             {
+                
 
                 string expertise = lstExpertise.SelectedItem.Text;
                 string Qualification = chkQualification.SelectedItem.Text;
