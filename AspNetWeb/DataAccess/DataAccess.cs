@@ -6,6 +6,7 @@ using AspNetWeb.Models;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Web.Security;
 
 namespace AspNetWeb.DataAccess
 {
@@ -14,7 +15,7 @@ namespace AspNetWeb.DataAccess
         private string dbConn = ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString.ToString();
         public void SaveAssessment(Assessment model)
         {
-
+			// Test Push
             using (var conn = new SqlConnection(dbConn))
             {
                 conn.Open();
@@ -51,7 +52,7 @@ namespace AspNetWeb.DataAccess
                 {
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "GetAssessments";
+                    cmd.CommandText = "GETAssessments";
                     cmd.CommandTimeout = 300;
                     using (var datareader = cmd.ExecuteReader())
                     {

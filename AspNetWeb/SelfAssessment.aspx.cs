@@ -67,6 +67,7 @@ namespace AspNetWeb
 
                 DataAccessLogic obj = new DataAccessLogic();
                 obj.SaveAssessment(input);
+               bool res = obj.Register(txtEmail.Text,txtPassword.Text);
                 var dataList = obj.GetAssessments();
                 grdAssessments.DataSource = dataList;
                 grdAssessments.DataBind();
