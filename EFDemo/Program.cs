@@ -13,6 +13,7 @@ namespace EFDemo
         static void Main(string[] args)
         {
 
+
             /* //Model First
             var objBusiness = new ModelFirstLogic();
             objBusiness.AddCourse("Programming", "4");
@@ -36,9 +37,25 @@ namespace EFDemo
 
             var objBusiness = new CodeFirstDataLogic();
             objBusiness.AddCourse("System Architecture Advanced", 7);
-            */
+           
             var objBusiness = new ModelFirstLogic();
             var student = objBusiness.GetStudent(1);
+            Console.ReadKey();
+             
+
+            //ASMX
+            ProductService.ProductServiceSoapClient client = new ProductService.ProductServiceSoapClient();
+            var product1= client.GetProduct(1);
+            var product2 = client.GetProduct(2);
+            Console.ReadKey();
+            */
+            //WCF
+
+            WCFTestReference.IProductService product = new WCFTestReference.ProductServiceClient();
+            WCFTestReference.Input inp = new WCFTestReference.Input() { ProductId = 1 };
+            WCFTestReference.Input inp1 = new WCFTestReference.Input() { ProductId = 2 };
+            var product1 = product.GetProduct(inp);
+            var product2 = product.GetProduct(inp1);
             Console.ReadKey();
         }
     }
