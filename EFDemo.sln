@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorMethods", "Calcul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFTest", "WCFTest\WCFTest.csproj", "{D1A21D28-6B13-4E22-8BBC-BAD6D44CFEE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCApp", "MVCApp\MVCApp.csproj", "{B876AAB2-3E16-4FA8-9F27-DC8B92160030}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{D1A21D28-6B13-4E22-8BBC-BAD6D44CFEE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1A21D28-6B13-4E22-8BBC-BAD6D44CFEE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1A21D28-6B13-4E22-8BBC-BAD6D44CFEE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B876AAB2-3E16-4FA8-9F27-DC8B92160030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B876AAB2-3E16-4FA8-9F27-DC8B92160030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B876AAB2-3E16-4FA8-9F27-DC8B92160030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B876AAB2-3E16-4FA8-9F27-DC8B92160030}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
